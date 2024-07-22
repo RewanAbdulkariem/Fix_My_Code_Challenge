@@ -1,30 +1,31 @@
 #!/usr/bin/python3
-""" 
-User class
+"""
+This class represents a user with an email attribute.
 """
 
+
 class User():
-    """ Documentation """
+    """ User class for managing user data."""
 
     def __init__(self):
-        """ Documentation """
+        """ Initialize a new User instance with no email address. """
         self.__email = None
+
+    @property
+    def email(self):
+        """ Get the email address of the user. """
+        return self.__email
 
     @email.setter
     def email(self, value):
-        """ Documentation """
+        """ Set the email address of the user."""
         if type(value) is not str:
             raise TypeError("email must be a string")
         self.__email = value
 
-    @property
-    def email(self):
-        """ Documentation """
-        return self.__email
-   
-    
-if __name__ == "__main__":
 
+if __name__ == "__main__":
+    """ main to run"""
     u = User()
     u.email = "john@snow.com"
     print(u.email)
